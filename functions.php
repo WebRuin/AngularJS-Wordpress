@@ -453,4 +453,18 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     AngularJS Functions Functions
 \*------------------------------------*/
 
+/* Load angular scripts */
+function my_scripts() {
+    
+    wp_enqueue_script(
+        'angularjs',
+        get_stylesheet_directory_uri() . '/bower_components/angular/angular.min.js'
+    );
+    wp_enqueue_script(
+        'angularjs-route',
+        get_stylesheet_directory_uri() . '/bower_components/angular-route/angular-route.min.js'
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts' );
+
 ?>
